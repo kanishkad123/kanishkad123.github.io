@@ -1,0 +1,13 @@
+
+# HTID:4738608: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:4738608:
+
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /html/(.*).html\ HTTP/
+   RewriteRule .* http://localhost/html/%1 [R=301,L]
+
+   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /html/(.*)\ HTTP/
+   RewriteRule .* %1.html [L]
+</IfModule>
